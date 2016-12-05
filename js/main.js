@@ -16,9 +16,24 @@ $(function(){
 
 //scroll
 $(function(){
-	$('header#site a').click(function(e){
+	$('header#site a, .ver-plantas').click(function(e){
 		$.scrollTo((this.hash) || 0, 500);
 		$('nav.menu-mobile ul').slideUp("fast");
 		e.preventDefault();
 	});
 });
+
+//Menu
+$(function(){
+	//if ($(window).width() <= 480) {
+		$('.menu-mobile').on('click', function(){
+		    $('.menu ul').slideToggle("fast",function(){
+				$('main#content-site, .menu ul li a').on('click', function(){
+					$('.menu ul').slideUp("fast");
+				});
+		    });
+		});
+	//}
+});
+
+

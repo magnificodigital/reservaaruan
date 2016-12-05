@@ -68,12 +68,11 @@ header#site {
 	display: block;
 	position: fixed;
 	width: 100%;
-	z-index: 1000;
+	z-index: 2000;
 	.logo {
 		float: left;
-		transition: 0.3s;
-		-webkit-transition: 0.3s;
-		-moz-transition: 0.3s;
+		@include transicao(0.3s);
+		margin-bottom: 0;
 		&:hover {
 			opacity: 0.85;
 		}
@@ -87,7 +86,7 @@ header#site {
 			list-style: none;
 			li {
 				display: inline-block;
-				margin: 0 20px;
+				margin-left: 40px;
 			}
 
 			li a {
@@ -102,7 +101,10 @@ header#site {
 	}
 }
 
-#content-site {height: inherit;}
+#content-site {
+	display: block;
+	position: relative;
+	height: inherit;}
 .content-row {
 	h2, h3 {
 		text-transform: uppercase;
@@ -141,9 +143,9 @@ header#site {
 }
 
 .btn2 {
-	background: #FFF;
-	color: $azul;
-	@include sombra(#CCC);
+	background: $azul;
+	color: #FFF;
+	@include sombra($azulescuro);
 	margin-top: 20px;
 	display: block;
 	text-align: center;
@@ -159,11 +161,25 @@ header#site {
 	background-attachment: fixed;
 	background-repeat: repeat;
 	background-size: cover;
-	height: 200%;
-	.secao1, .secao2 {
-		height: 50%;
+	height: 100%;
+	.container {
+		display: flex;
+		height: 100%;
+		.row {
+			@include vcentra();
+		}
+	}
+}
+
+#row2 {
+	background: #FFF;
+	height: 100%;
+	display: flex;
+	position: relative;
+	.container {
 		@include vcentra();
 	}
+	/*.row {width: 100%;}*/
 }
 
 .content-info {
@@ -175,12 +191,10 @@ header#site {
 }
 
 #photos-galery {
-	height: auto;
 	margin-top: 40px;
-
+	display: block;
+	position: relative;
 	a.fancybox {
-		max-width: 350px;
-		height: 200px;
 		cursor: pointer;
 		overflow: hidden;
 		&:after {
@@ -188,18 +202,16 @@ header#site {
 			display: block;
 			top: 0;
 			left: 0;
-			background: url('../img/mouse-over.png') no-repeat center;
-			width: 350px;
-			height: 200px;
+			background: url('../img/mouse-over.png') no-repeat center rgba(0,0,0,0.55);
+			width: 100%;
+			height: 100%;
 			position: absolute;
 			opacity: 0;
 			@include transicao(0.5s);
 		}
-
 		&:hover:after{
 			opacity: 1;	
 		}
-
 		img {max-width: 100%;}
 	}
 
@@ -212,6 +224,9 @@ header#site {
 		position: relative;
 		margin-top: 20px;
 	}
+
+	.swiper-slide img {max-width: 100%;}
+	
 }
 
 #slider-home {
@@ -235,12 +250,12 @@ header#site {
 }
 
 #plantas {
-	height: 100%;
+	height: auto;
 	padding-top: 150px;
-	display: block;
 	position: relative;
 	color: $azul;
-	@include vcentra();
+
+	//.row {@include vcentra();}
 
 	h4 {
 		text-transform: uppercase;
@@ -248,8 +263,8 @@ header#site {
 	}
 	ul {
 		list-style: none;
-		margin-top: 30px;
 		font-size: 16px;
+		margin-bottom: 100px;
 	}
 
 	.btn1, .btn2 {
@@ -267,7 +282,7 @@ header#site {
 	}
 
 	.btn1 {
-		margin-top: 80px;
+		margin-top: 30px;
 		background: $verde;}
 	.btn2 {
 		background: $azul;
@@ -277,10 +292,13 @@ header#site {
 		padding: 15px 10px;
 	}
 
+	.swiper-container.galery-plantas {margin: 50px 0;}
 	.galery-plantas .swiper-pagination {
 		position: relative;
 		margin-top: 20px;
 	}
+
+	.swiper-slide img {max-width: 100%;}
 }
 
 #localizacao {
@@ -297,6 +315,7 @@ header#site {
 	margin-left: -960px;
 	position: relative;
 	background: url('../img/row-map2.jpg') no-repeat center;
+	/*z-index: 500;*/
 
 	.balao {
 		position: absolute;
@@ -380,9 +399,14 @@ header#site {
 	height: 100%;
 	padding: 50px 0;
 	color: $azul;
-	@include vcentra();
+	background: url('../img/personalize.png') center no-repeat;
+	.container, .row {
+		height: 100%;
+	}
+
+	.row {@include vcentra();}
+
 	.content-row {
-		margin-top: 120px;
 		a {
 			color: $azul;
 			text-decoration: underline !important;
@@ -398,15 +422,6 @@ header#site {
 			li {margin-bottom: 20px;}
 		}
 	}
-
-	.imgs{
-		text-align: center;
-		img {
-			margin-top: 50px;
-			margin-bottom: 0;
-		}
-	} 
-
 }
 
 #contato {
@@ -424,8 +439,19 @@ header#site {
 		height: 100%;
 		@include vcentra();
 	}
+	.content-row h3 {margin-top: 0;}
+}
 
+aside#form {
+	z-index: 499;
+	position: fixed;
+	top: 120px;
+	/*max-width: 350px;*/
+	display: none;
 	.form-box {
+		background: #FFF;
+		padding: 20px;
+		display: block;
 		button {
 			color: #FFF;
 			border: 0;
@@ -436,14 +462,13 @@ header#site {
 		}
 		.btn-tel {
 			padding: 15px;
-			width: 62%;
 			background: #bd2e2a;
 			@include sombra(#8d2420);
 		}
 		.btn-form {
-			width: 35%;
 			padding: 10px 15px !important; 
 			float: right;
+			margin-top: 20px;
 			font-size: 24px;
 			background: $verde;
 			text-transform: uppercase;
@@ -452,7 +477,6 @@ header#site {
 		}
 	}
 }
-
 
 footer#site {
 	background: $azul;
@@ -477,7 +501,7 @@ footer#site {
 		}
 		&:after,
 		.chat-online {
-			background: #00a651;
+			background: $verde;
 		}
 		li {
 			border-left: 1px solid $azulescuro;
@@ -487,6 +511,11 @@ footer#site {
 				color: #FFF !important;
 				&:hover {text-decoration: none;}
 				p {font-size: 12px;}
+			}
+			&:first-child {
+				p {
+					margin: 7px;
+				}
 			}
 		} 
 	}
@@ -544,7 +573,9 @@ footer#site {
 		background: url('../img/sprites.png') no-repeat -65px 0;
 	}
 
-	.chat-online {font-weight: 700;}
+	.chat-online {
+		height: 100%;
+		font-weight: 700;}
 	.chat-online a {color: #FFF !important;}
 	.chat-online:before {
 		content: "";
@@ -566,5 +597,191 @@ footer#site {
 		margin-right: 10px;
 		content: "";
 	}
+}
 
+.menu-mobile {
+	display: none;
+	color: #FFF;
+	cursor: pointer;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	font-size: 24px;
+	* {font-family: FontAwesome !important;}
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	footer#site {
+		ul li {
+			padding: 10px;
+		}
+	}
+}
+
+@media only screen and (min-width: 770px) and (max-width: 991px) {
+
+	header#site {
+		nav ul li {
+			margin-left: 10px;
+			a {font-size: 13px;}
+		}
+	}
+	#row2 {padding: 50px 0; height: auto;}
+
+	#personalize {
+		background: #FFF !important;
+	}
+
+	#localizacao {
+		.texto-vista {
+			margin-top: 300px !important;
+		}
+		.map {
+			top: 0;
+		}
+	}
+	
+	footer#site {
+		ul li a p {display: none;}
+		ul li a:before {display: none;}
+	}
+
+}
+
+@media only screen and (max-width: 769px) {
+
+	.mask-white {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(255,255,255,0.5);
+		@include transicao(1s);
+	}
+
+	.menu-mobile {display: block;}
+	header#site {
+		h1.logo {
+			text-align: center;
+		}
+		nav {
+			ul {
+				z-index: 1999;
+				display: none;
+				position: absolute;
+				top: 49px;
+				right: 0;
+				width: 100%;
+				background: rgba(255,255,255,0.90);
+				li {
+					display: block;
+					a {
+						color: $azul;
+						font-size: 16px;
+						padding: 10px !important;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+
+	#localizacao {
+		background: center;
+		background-size: cover;
+		.boxes {display: none;}
+		.texto-vista {
+			margin-top: 100px !important;
+		}
+
+		.map {
+			width: 100%;
+			height: auto;
+			overflow-x: hidden;
+			margin: 0 auto;
+			left: 0;
+			margin-left: 0;
+			position: relative;
+			background-size: cover;
+			.content-row {
+				margin-top: 220px;
+			}
+			.texto-vista {
+				margin: 100px 0;
+			}
+		}
+	}
+
+	#personalize {
+		/*background: url('../img/personalize.png') center no-repeat;*/
+		background: #FFF;
+	}
+
+
+	aside#form {
+		display: block;
+		position: relative !important;
+		top: 0 !important;
+		width: auto;
+	}
+
+	footer#site {
+		ul li {
+			p {line-height: 15px;}
+			padding: 10px 15px;}
+		ul li a p {
+			display: none;
+		}
+
+		ul:after {
+			display: none !important;
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+
+
+	#row1 {
+		height: auto;
+		padding: 100px 0;
+	}
+
+	#row2 {
+		width: auto;
+		height: auto;
+		display: block;
+		padding: 50px 0;
+		.container {
+			display: block;
+		}
+	}
+
+	#personalize {
+		height: auto;
+		.content-row{margin-top: 0 !important;}
+	}
+
+	#personalize {background-position: -100% 50%;}
+
+	#contato {
+		height: auto;
+		padding-top: 30px;
+		padding-bottom: 100px;
+		.row {
+			display: block;
+			height: auto;
+		}	
+
+		aside#form {display: block !important;}
+
+	}
+
+	footer#site {
+		width: 100%;
+		.chat-online {display: none;}
+	}
 }
