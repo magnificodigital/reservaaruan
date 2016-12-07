@@ -36,4 +36,10 @@ $(function(){
 	//}
 });
 
+//Troca telefone
+$(function(){
+	$('.form-box .btn-tel').on("click",function(){
+		$(this).text("0000-0000");
+	});
+});
 

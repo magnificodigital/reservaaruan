@@ -11,11 +11,10 @@ $verdeclaro: #00af4a;
 * {
 	font-family: 'Open Sans', sans-serif !important;
 }
-
 html,
 body {
 	height: 100% !important;
-	margin: 0;
+	margin: 0 !important;
 	padding: 0;
 	position: relative;
 }
@@ -67,6 +66,7 @@ header#site {
 	padding: 10px 0;
 	display: block;
 	position: fixed;
+	top: 0;
 	width: 100%;
 	z-index: 2000;
 	.logo {
@@ -100,6 +100,7 @@ header#site {
 		}
 	}
 }
+
 
 #content-site {
 	display: block;
@@ -255,8 +256,6 @@ header#site {
 	position: relative;
 	color: $azul;
 
-	//.row {@include vcentra();}
-
 	h4 {
 		text-transform: uppercase;
 		margin-top: 20px;
@@ -299,6 +298,23 @@ header#site {
 	}
 
 	.swiper-slide img {max-width: 100%;}
+
+	a.fancybox {
+		&:after {
+			content: "";
+			display: block;
+			top: 0;
+			left: 0;
+			background: url('../img/mouse-over.png') no-repeat center rgba(135,168,205,0.55);
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			opacity: 0;
+			@include transicao(0.5s);
+		}
+		&:hover:after{opacity: 1;}
+		img {max-width: 100%;}
+	}
 }
 
 #localizacao {
@@ -446,12 +462,12 @@ aside#form {
 	z-index: 499;
 	position: fixed;
 	top: 120px;
-	/*max-width: 350px;*/
 	display: none;
 	.form-box {
 		background: #FFF;
 		padding: 20px;
 		display: block;
+		max-width: 350px;
 		button {
 			color: #FFF;
 			border: 0;
@@ -610,6 +626,84 @@ footer#site {
 	* {font-family: FontAwesome !important;}
 }
 
+/*---------Lightbox----------*/
+
+.lightbox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 9999 !important;
+}
+
+.close-box {
+	&:before {
+		width: 40px;
+		height: 40px;
+		content: "";
+		display: block;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		background: url('../img/btn-close.png') no-repeat center;
+		z-index: 9999;
+		opacity: 0.6;
+	}
+
+	&:hover:before {
+		opacity: 1;
+	}
+	
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    position: fixed;
+}
+
+.box-lightbox {
+    z-index: 9999;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    height: 100%;
+    @include vcentra();
+    iframe {
+    	max-width: 853px;
+    	margin: 0 auto;
+    }
+}
+
+.close-box {
+    width: 25px;
+    height: 25px;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    top: -12px;
+    right: -12px;
+    background: url('images/btn-close.png') no-repeat center;
+}
+
+.play-video {
+	width: 88px;
+	height: 88px;
+	background: url('../img/sprites.png') no-repeat 0px -52px;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 50%;
+	margin-right: -88px;
+	cursor: pointer;
+	@include transicao(0.2s);
+	&:hover {
+		margin-right: -93px;
+	}
+}
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	footer#site {
@@ -627,7 +721,15 @@ footer#site {
 			a {font-size: 13px;}
 		}
 	}
-	#row2 {padding: 50px 0; height: auto;}
+	#row2 {
+		width: auto;
+		height: auto;
+		display: block;
+		padding: 50px 0;
+		.container {
+			display: block;
+		}
+	}
 
 	#personalize {
 		background: #FFF !important;
@@ -646,8 +748,12 @@ footer#site {
 		ul li a p {display: none;}
 		ul li a:before {display: none;}
 	}
-
 }
+
+
+
+
+
 
 @media only screen and (max-width: 769px) {
 
@@ -689,6 +795,17 @@ footer#site {
 	}
 
 
+	#row2 {
+		width: auto;
+		height: auto;
+		display: block;
+		padding: 50px 0;
+		.container {
+			display: block;
+		}
+	}
+
+
 	#localizacao {
 		background: center;
 		background-size: cover;
@@ -725,7 +842,7 @@ footer#site {
 		display: block;
 		position: relative !important;
 		top: 0 !important;
-		width: auto;
+		width: 100%;
 	}
 
 	footer#site {
@@ -743,7 +860,6 @@ footer#site {
 }
 
 @media only screen and (max-width: 480px) {
-
 
 	#row1 {
 		height: auto;
@@ -776,8 +892,10 @@ footer#site {
 			height: auto;
 		}	
 
-		aside#form {display: block !important;}
-
+		aside#form {
+			display: block !important;
+			.form-box {max-width: 100%;}
+		}
 	}
 
 	footer#site {

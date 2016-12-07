@@ -5,7 +5,7 @@
 html,
 body {
   height: 100% !important;
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   position: relative; }
 
@@ -38,6 +38,7 @@ header#site {
   padding: 10px 0;
   display: block;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 2000; }
   header#site .logo {
@@ -254,6 +255,25 @@ header#site {
     margin-top: 20px; }
   #plantas .swiper-slide img {
     max-width: 100%; }
+  #plantas a.fancybox:after {
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    background: url("../img/mouse-over.png") no-repeat center rgba(135, 168, 205, 0.55);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s; }
+  #plantas a.fancybox:hover:after {
+    opacity: 1; }
+  #plantas a.fancybox img {
+    max-width: 100%; }
 
 #localizacao {
   width: 100%;
@@ -378,12 +398,12 @@ aside#form {
   z-index: 499;
   position: fixed;
   top: 120px;
-  /*max-width: 350px;*/
   display: none; }
   aside#form .form-box {
     background: #FFF;
     padding: 20px;
-    display: block; }
+    display: block;
+    max-width: 350px; }
     aside#form .form-box button {
       color: #FFF;
       border: 0;
@@ -521,6 +541,78 @@ footer#site {
   .menu-mobile * {
     font-family: FontAwesome !important; }
 
+/*---------Lightbox----------*/
+.lightbox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 9999 !important; }
+
+.close-box:before {
+  width: 40px;
+  height: 40px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: url("../img/btn-close.png") no-repeat center;
+  z-index: 9999;
+  opacity: 0.6; }
+.close-box:hover:before {
+  opacity: 1; }
+
+.mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  position: fixed; }
+
+.box-lightbox {
+  z-index: 9999;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center; }
+  .box-lightbox iframe {
+    max-width: 853px;
+    margin: 0 auto; }
+
+.close-box {
+  width: 25px;
+  height: 25px;
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  top: -12px;
+  right: -12px;
+  background: url("images/btn-close.png") no-repeat center; }
+
+.play-video {
+  width: 88px;
+  height: 88px;
+  background: url("../img/sprites.png") no-repeat 0px -52px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  margin-right: -88px;
+  cursor: pointer;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s; }
+  .play-video:hover {
+    margin-right: -93px; }
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   footer#site ul li {
     padding: 10px; } }
@@ -531,8 +623,12 @@ footer#site {
       font-size: 13px; }
 
   #row2 {
-    padding: 50px 0;
-    height: auto; }
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 50px 0; }
+    #row2 .container {
+      display: block; }
 
   #personalize {
     background: #FFF !important; }
@@ -581,6 +677,14 @@ footer#site {
         padding: 10px !important;
         display: block; }
 
+  #row2 {
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 50px 0; }
+    #row2 .container {
+      display: block; }
+
   #localizacao {
     background: center;
     background-size: cover; }
@@ -610,7 +714,7 @@ footer#site {
     display: block;
     position: relative !important;
     top: 0 !important;
-    width: auto; }
+    width: 100%; }
 
   footer#site ul li {
     padding: 10px 15px; }
@@ -650,6 +754,8 @@ footer#site {
       height: auto; }
     #contato aside#form {
       display: block !important; }
+      #contato aside#form .form-box {
+        max-width: 100%; }
 
   footer#site {
     width: 100%; }
