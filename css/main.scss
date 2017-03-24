@@ -92,6 +92,7 @@ header#site {
 			li a {
 				color: #FFF;
 				text-transform: uppercase;
+				font-size: 14px;
 				@include transicao(0.3s);
 				&:hover {
 					color: $bege;
@@ -195,7 +196,7 @@ header#site {
 	margin-top: 40px;
 	display: block;
 	position: relative;
-	a.fancybox {
+	a.galery {
 		cursor: pointer;
 		overflow: hidden;
 		&:after {
@@ -213,7 +214,7 @@ header#site {
 		&:hover:after{
 			opacity: 1;	
 		}
-		img {max-width: 100%;}
+		img {max-width: 100%; margin-left: 0 !important; padding-left: 0 !important;}
 	}
 
 	.swiper-container {
@@ -299,7 +300,7 @@ header#site {
 
 	.swiper-slide img {max-width: 100%;}
 
-	a.fancybox {
+	a.galery {
 		&:after {
 			content: "";
 			display: block;
@@ -509,7 +510,7 @@ footer#site {
 		padding: 0;
 		margin: 0;
 		list-style: none;
-		&:after {
+		/*&:after {
 	    	width: 100%;
 		    position: absolute;
 		    height: 100%;
@@ -518,8 +519,10 @@ footer#site {
 		&:after,
 		.chat-online {
 			background: $verde;
-		}
+		}*/
 		li {
+			width: 20%;
+			float: left;
 			border-left: 1px solid $azulescuro;
 			padding: 10px 25px;
 			a {
@@ -535,8 +538,8 @@ footer#site {
 			}
 		} 
 	}
-	ul li p span,
-	.chat-online span {
+	ul li p span/*,
+	.chat-online span*/ {
 		line-height: 7px;
 		display: block;
 	}
@@ -626,7 +629,7 @@ footer#site {
 	* {font-family: FontAwesome !important;}
 }
 
-/*---------Lightbox----------*/
+/*
 
 .lightbox {
     width: 100%;
@@ -687,7 +690,7 @@ footer#site {
     top: -12px;
     right: -12px;
     background: url('images/btn-close.png') no-repeat center;
-}
+}  */
 
 .play-video {
 	width: 88px;
@@ -747,7 +750,13 @@ footer#site {
 	footer#site {
 		ul li a p {display: none;}
 		ul li a:before {display: none;}
+		
 	}
+}
+
+@media (max-width: 991px) {
+	footer#site ul li.contact-us {padding: 0 10px;}
+	footer#site ul li.contact-us p {font-size: 12px; margin: 0; line-height: 54px}
 }
 
 
@@ -766,6 +775,8 @@ footer#site {
 		background: rgba(255,255,255,0.5);
 		@include transicao(1s);
 	}
+
+	.contact-us {display: none !important;}
 
 	.menu-mobile {display: block;}
 	header#site {
@@ -846,7 +857,9 @@ footer#site {
 	}
 
 	footer#site {
+
 		ul li {
+			width: 25%;
 			p {line-height: 15px;}
 			padding: 10px 15px;}
 		ul li a p {

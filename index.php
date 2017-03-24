@@ -14,6 +14,8 @@
 		<link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/swiper.min.css">
 		<link rel="shortcut icon" href="<?php bloginfo('template_url') ?>/img/favicon.png">
 		<link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/font-awesome.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
+
 		<!--[if IE 7]>
 		<link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/font-awesome-ie7.min.css">
 		<![endif]-->
@@ -30,26 +32,18 @@
 		<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/jquery.scrollTo.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/swiper.min.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/swiper.jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/main.js"></script>
 
-		<!--fancybox-->
-		<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/fb/lib/jquery.mousewheel-3.0.6.pack.js"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/fb/source/jquery.fancybox.js?v=2.1.5"></script>
-		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/js/fb/source/jquery.fancybox.css?v=2.1.5" media="screen" />
-		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/js/fb/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
-		<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/fb/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/fb/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/fb/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
 		<script type="text/javascript">
-			$(document).ready(function() {
-				$('.fancybox').fancybox({
-					padding: 0,
-					helpers: {
-						overlay: {
-								locked: false
-							}
-						}
-				});
+			$('[data-fancybox]').fancybox({
+				youtube : {
+					controls : 0,
+					showinfo : 0
+				},
+				vimeo : {
+					color : 'f00'
+				}
 			});
 		</script>
 
@@ -71,14 +65,6 @@
 
 	</head>
 <body>
-
-<div class="lightbox video">
-	<span class="close-box"></span>
-	<div class="mask"></div>
-	<div class="box-lightbox container">
-		<iframe width="853" height="480" src="https://www.youtube.com/embed/eWocmw-iPaM" frameborder="0" allowfullscreen></iframe>
-	</div>
-</div>
 
 <header id="site" role="header">
 	<div class="container">
@@ -122,7 +108,10 @@
 					</div>
 				</div>
 				<div class="col-lg-7 col-md-6 hidden-sm-down">
-					<span class="open-lightbox play-video"></span>
+					<a data-fancybox class="play-video" href="https://www.youtube.com/watch?v=eWocmw-iPaM">
+						<!--<span class=""></span>-->
+					</a>
+					<!--<span class="open-lightbox play-video"></span>-->
 				</div>
 			</div>
 		</div>
@@ -144,19 +133,19 @@
 							<div class="swiper-wrapper">
 
 								<div class="swiper-slide">
-									<a href="<?php bloginfo('template_url') ?>/img/galeria/EKO-CARAGUA-02-ACADEMIA_00.jpg" data-fancybox-group="gallery1" class="fancybox" title="">
+									<a href="<?php bloginfo('template_url') ?>/img/galeria/EKO-CARAGUA-02-ACADEMIA_00.jpg" data-fancybox="gallery1" class="galery">
 										<img src="<?php bloginfo('template_url') ?>/img/galeria/thumb-EKO-CARAGUA-02-ACADEMIA_00.jpg" alt="slide">
 									</a>
 								</div>
 
 								<div class="swiper-slide">
-									<a href="<?php bloginfo('template_url') ?>/img/galeria/EKO-CARAGUA-02-LOUNGE_01.jpg" data-fancybox-group="gallery1" class="fancybox" title="">
+									<a href="<?php bloginfo('template_url') ?>/img/galeria/EKO-CARAGUA-02-LOUNGE_01.jpg" data-fancybox="gallery1" class="galery">
 										<img src="<?php bloginfo('template_url') ?>/img/galeria/thumb-EKO-CARAGUA-02-LOUNGE_01.jpg" alt="slide">
 									</a>
 								</div>
 
 								<div class="swiper-slide">
-									<a href="<?php bloginfo('template_url') ?>/img/galeria/EKO-CARAGUA-02-SPA_03.jpg" data-fancybox-group="gallery1" class="fancybox" title="">
+									<a href="<?php bloginfo('template_url') ?>/img/galeria/EKO-CARAGUA-02-SPA_03.jpg" data-fancybox="gallery1" class="galery">
 										<img src="<?php bloginfo('template_url') ?>/img/galeria/thumb-EKO-CARAGUA-02-SPA_03.jpg" alt="slide">
 									</a>
 								</div>
@@ -247,7 +236,7 @@
 						<div class="swiper-wrapper">
 
 							<div class="swiper-slide" data-swiper-autoplay="5000">
-								<a href="<?php bloginfo('template_url') ?>/img/plantas/planta1.jpg" data-fancybox-group="gallery2" class="fancybox a-plantas" title="Planta 1">
+								<a href="<?php bloginfo('template_url') ?>/img/plantas/planta1.jpg" data-fancybox="gallery2" class="galery a-plantas">
 									<img src="<?php bloginfo('template_url') ?>/img/plantas/planta1.jpg">
 								</a>
 							</div>
@@ -347,12 +336,11 @@
 <footer id="site">
 	<div class="container">
 		<ul>
-			<li class="col-lg-2 col-md-2 col-xs-12" style="display: none;"><p><strong>Fale conosco</strong></p></li>
-			<li class="col-lg-2 col-md-2 col-xs-3"><a href="http://www.ekoconstrutora.com.br/fale-conosco/" class="ico-mail" target="_blank"><p>Atendimento <span>por e-mail</span></p></a></li>
-			<li class="col-lg-2 col-md-2 col-xs-3"><a href="http://www.ekoconstrutora.com.br/ligamos-para-voce/" class="ico-tel" target="_blank"><p>Ligamos <span>para você</span></p></a></li>
-			<li class="col-lg-2 col-md-2 col-xs-3"><a href="http://www.ekoconstrutora.com.br/agende-uma-visita/" class="ico-agenda" target="_blank"><p>Agende <span>uma visita</span></p></a></li>
-			<li class="col-lg-2 col-md-2 col-xs-3"><a href="#" class="ico-whatsapp" target="_blank"><p>Atendimento <span>via whatsapp</span></p></a></li>
-			<li class="col-lg-4 col-md-4 chat-online hidden-sm-down"><!--a href="#" class="" target="_blank"><p class="hidden-sm-down">Atendimento <span>online</span></p></a--></li>
+			<li class="contact-us"><p><strong>Fale conosco</strong></p></li>
+			<li><a href="http://www.ekoconstrutora.com.br/fale-conosco/" class="ico-mail" target="_blank"><p>Atendimento <span>por e-mail</span></p></a></li>
+			<li><a href="http://www.ekoconstrutora.com.br/ligamos-para-voce/" class="ico-tel" target="_blank"><p>Ligamos <span>para você</span></p></a></li>
+			<li><a href="http://www.ekoconstrutora.com.br/agende-uma-visita/" class="ico-agenda" target="_blank"><p>Agende <span>uma visita</span></p></a></li>
+			<li><a href="#" class="ico-whatsapp" target="_blank"><p>Atendimento <span>via whatsapp</span></p></a></li>
 		</ul>
 	</div>
 </footer>
@@ -460,30 +448,6 @@
 
 		});
 	});
-</script>
-
-<!--lightbox-->
-<script type="text/javascript">
-    
-    $(document).ready(function(){
-
-    	$('.open-lightbox.play-video').on('click',function(){
-    		$('.lightbox.video').fadeIn('fast');
-
-    		$('.close-box, .mask').on('click',function(){
-	            $('.lightbox').fadeOut('fast');
-	        });	
-
-	        document.onkeyup=function(e) {
-				if(e.which == 27){
-					$('.lightbox').fadeOut('fast');	
-					//alert('Oi');
-	      		}	
-    		}
-
-    	});
-    });
-
 </script>
 
 <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/integration/stable/rd-js-integration.min.js"></script>  
