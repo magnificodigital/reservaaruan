@@ -1,0 +1,7 @@
+/css
+/js
+/node_modules
+/bower_components
+bower.json
+gulpfile.js
+package.json

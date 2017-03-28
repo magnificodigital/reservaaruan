@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 * {
-  font-family: 'Open Sans', sans-serif !important; }
+  font-family: 'Open Sans', sans-serif; }
 
 html,
 body {
@@ -33,6 +33,9 @@ a:hover {
 ul {
   padding-left: 0; }
 
+.customize-support header#site {
+  top: 32px; }
+
 header#site {
   background: rgba(35, 94, 162, 0.9);
   padding: 10px 0;
@@ -48,7 +51,8 @@ header#site {
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    margin-top: 0 !important; }
     header#site .logo:hover {
       opacity: 0.85; }
   header#site nav {
@@ -130,7 +134,7 @@ header#site {
     box-shadow: 0px 5px 0px 0px #0f3e74; }
 
 #row1 {
-  background: url("../img/row1.jpg") top;
+  background: url("../../img/row1.jpg") top;
   background-attachment: fixed;
   background-repeat: repeat;
   background-size: cover;
@@ -173,10 +177,10 @@ header#site {
       display: block;
       top: 0;
       left: 0;
-      background: url("../img/mouse-over.png") no-repeat center rgba(0, 0, 0, 0.55);
+      position: absolute;
+      background: url("../../img/mouse-over.png") no-repeat center rgba(0, 0, 0, 0.55);
       width: 100%;
       height: 100%;
-      position: absolute;
       opacity: 0;
       transition: 0.5s;
       -webkit-transition: 0.5s;
@@ -263,7 +267,7 @@ header#site {
     display: block;
     top: 0;
     left: 0;
-    background: url("../img/mouse-over.png") no-repeat center rgba(135, 168, 205, 0.55);
+    background: url("../../img/mouse-over.png") no-repeat center rgba(135, 168, 205, 0.55);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -290,7 +294,7 @@ header#site {
   left: 50%;
   margin-left: -960px;
   position: relative;
-  background: url("../img/row-map2.jpg") no-repeat center;
+  background: url("../../img/row-map2.jpg") no-repeat center;
   /*z-index: 500;*/ }
   .map .balao {
     position: absolute;
@@ -300,43 +304,43 @@ header#site {
   .map .nova-rodovia-de-acesso {
     width: 227px;
     height: 64px;
-    background: url("../img/location/balao-nova-rodovia.png") no-repeat center;
+    background: url("../../img/location/balao-nova-rodovia.png") no-repeat center;
     top: 116px;
     left: 93px; }
   .map .shopping-serra-mar {
     width: 227px;
     height: 64px;
-    background: url("../img/location/shopping.png") no-repeat center;
+    background: url("../../img/location/shopping.png") no-repeat center;
     top: 260px;
     left: 380px; }
   .map .centro-esportivo {
     width: 210px;
     height: 81px;
-    background: url("../img/location/centro-esportivo.png") no-repeat center;
+    background: url("../../img/location/centro-esportivo.png") no-repeat center;
     top: 196px;
     left: 1144px; }
   .map .escola-municipal {
     width: 210px;
     height: 81px;
-    background: url("../img/location/escola.png") no-repeat center;
+    background: url("../../img/location/escola.png") no-repeat center;
     top: 350px;
     left: 1215px; }
   .map .spani {
     width: 227px;
     height: 64px;
-    background: url("../img/location/spani.png") no-repeat center;
+    background: url("../../img/location/spani.png") no-repeat center;
     top: 285px;
     left: 1490px; }
   .map .ciclovia {
     width: 210px;
     height: 81px;
-    background: url("../img/location/ciclovia.png") no-repeat center;
+    background: url("../../img/location/ciclovia.png") no-repeat center;
     top: 842px;
     left: 1401px; }
   .map .logo-reserva {
     width: 168px;
     height: 183px;
-    background: url("../img/location/reserva.png") no-repeat center;
+    background: url("../../img/location/reserva.png") no-repeat center;
     top: 570px;
     left: 848px;
     position: absolute; }
@@ -355,7 +359,7 @@ header#site {
   height: 100%;
   padding: 50px 0;
   color: #215b9f;
-  background: url("../img/personalize.png") center no-repeat; }
+  background: url("../../img/personalize.png") center no-repeat; }
   #personalize .container, #personalize .row {
     height: 100%; }
   #personalize .row {
@@ -379,7 +383,7 @@ header#site {
 
 #contato {
   height: 100%;
-  background: url("../img/row-contato.jpg") center;
+  background: url("../../img/row-contato.jpg") center;
   background-attachment: fixed;
   background-repeat: repeat;
   background-size: cover; }
@@ -450,17 +454,7 @@ footer#site {
   footer#site ul {
     padding: 0;
     margin: 0;
-    list-style: none;
-    	/*&:after {
-        	width: 100%;
-    	    position: absolute;
-    	    height: 100%;
-    	    content: "";
-    	}
-    	&:after,
-    	.chat-online {
-    		background: $verde;
-    	}*/ }
+    list-style: none; }
     footer#site ul li {
       width: 20%;
       float: left;
@@ -481,7 +475,7 @@ footer#site {
   footer#site .ico-mail:before {
     width: 39px;
     height: 25px;
-    background: url("../img/sprites.png") no-repeat 0 0px;
+    background: url("../../img/sprites.png") no-repeat 0 0px;
     display: table;
     float: left; }
   footer#site .ico-mail:after {
@@ -491,7 +485,7 @@ footer#site {
   footer#site .ico-tel:before {
     width: 22px;
     height: 25px;
-    background: url("../img/sprites.png") no-repeat -40px 0;
+    background: url("../../img/sprites.png") no-repeat -40px 0;
     display: block;
     float: left; }
   footer#site .ico-tel:after {
@@ -503,7 +497,7 @@ footer#site {
     float: left;
     width: 24px;
     height: 25px;
-    background: url("../img/sprites.png") no-repeat 0 -30px; }
+    background: url("../../img/sprites.png") no-repeat 0 -30px; }
   footer#site .ico-agenda:after {
     display: block;
     clear: both; }
@@ -512,7 +506,7 @@ footer#site {
     height: 27px;
     display: block;
     float: left;
-    background: url("../img/sprites.png") no-repeat -65px 0; }
+    background: url("../../img/sprites.png") no-repeat -65px 0; }
   footer#site .chat-online {
     height: 100%;
     font-weight: 700; }
@@ -526,7 +520,7 @@ footer#site {
     margin-bottom: 4px;
     margin-top: 6px;
     margin-right: 10px;
-    background: url("../img/sprites.png") no-repeat -28px -27px;
+    background: url("../../img/sprites.png") no-repeat -28px -27px;
     float: left; }
   footer#site .ico-tel:before,
   footer#site .ico-mail:before,
@@ -535,6 +529,12 @@ footer#site {
     margin-top: 7px;
     margin-right: 10px;
     content: ""; }
+    @media (max-width: 768px) {
+      footer#site .ico-tel:before,
+      footer#site .ico-mail:before,
+      footer#site .ico-agenda:before,
+      footer#site .ico-whatsapp:before {
+        margin: 0 !important; } }
 
 .menu-mobile {
   display: none;
@@ -547,72 +547,10 @@ footer#site {
   .menu-mobile * {
     font-family: FontAwesome !important; }
 
-/*
-
-.lightbox {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    z-index: 9999 !important;
-}
-
-.close-box {
-	&:before {
-		width: 40px;
-		height: 40px;
-		content: "";
-		display: block;
-		position: absolute;
-		top: 20px;
-		right: 20px;
-		background: url('../img/btn-close.png') no-repeat center;
-		z-index: 9999;
-		opacity: 0.6;
-	}
-
-	&:hover:before {
-		opacity: 1;
-	}
-	
-}
-
-.mask {
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    position: fixed;
-}
-
-.box-lightbox {
-    z-index: 9999;
-    position: relative;
-    margin: 0 auto;
-    text-align: center;
-    height: 100%;
-    @include vcentra();
-    iframe {
-    	max-width: 853px;
-    	margin: 0 auto;
-    }
-}
-
-.close-box {
-    width: 25px;
-    height: 25px;
-    display: block;
-    position: absolute;
-    cursor: pointer;
-    top: -12px;
-    right: -12px;
-    background: url('images/btn-close.png') no-repeat center;
-}  */
 .play-video {
   width: 88px;
   height: 88px;
-  background: url("../img/sprites.png") no-repeat 0px -52px;
+  background: url("../../img/sprites.png") no-repeat 0px -52px;
   display: block;
   position: absolute;
   top: 0;
@@ -626,6 +564,15 @@ footer#site {
   -o-transition: 0.2s; }
   .play-video:hover {
     margin-right: -93px; }
+  @media (max-width: 991px) {
+    .play-video {
+      right: -200px;
+      margin-right: 0px; }
+      .play-video:hover {
+        margin-right: 5px; } }
+  @media (max-width: 768px) {
+    .play-video {
+      display: none; } }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   footer#site ul li {
@@ -657,6 +604,9 @@ footer#site {
   footer#site ul li a:before {
     display: none; } }
 @media (max-width: 991px) {
+  aside#form {
+    display: block; }
+
   footer#site ul li.contact-us {
     padding: 0 10px; }
 
@@ -671,7 +621,7 @@ footer#site {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.6);
     transition: 1s;
     -webkit-transition: 1s;
     -moz-transition: 1s;
@@ -687,10 +637,10 @@ footer#site {
   header#site h1.logo {
     text-align: center; }
   header#site nav ul {
-    z-index: 1999;
+    z-index: 0;
     display: none;
     position: absolute;
-    top: 49px;
+    top: 46px;
     right: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.9); }
@@ -732,11 +682,10 @@ footer#site {
         margin: 100px 0; }
 
   #personalize {
-    /*background: url('../img/personalize.png') center no-repeat;*/
+    /*background: url('../../img/personalize.png') center no-repeat;*/
     background: #FFF; }
 
   aside#form {
-    display: block;
     position: relative !important;
     top: 0 !important;
     width: 100%; }
@@ -749,7 +698,19 @@ footer#site {
   footer#site ul li a p {
     display: none; }
   footer#site ul:after {
-    display: none !important; } }
+    display: none !important; }
+
+  #contato {
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 100px; }
+    #contato .row {
+      display: block;
+      height: auto; }
+    #contato aside#form {
+      display: block !important; }
+      #contato aside#form .form-box {
+        max-width: 100%; } }
 @media only screen and (max-width: 480px) {
   #row1 {
     height: auto;
@@ -770,18 +731,6 @@ footer#site {
 
   #personalize {
     background-position: -100% 50%; }
-
-  #contato {
-    height: auto;
-    padding-top: 30px;
-    padding-bottom: 100px; }
-    #contato .row {
-      display: block;
-      height: auto; }
-    #contato aside#form {
-      display: block !important; }
-      #contato aside#form .form-box {
-        max-width: 100%; }
 
   footer#site {
     width: 100%; }

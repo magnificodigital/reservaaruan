@@ -2,7 +2,7 @@
 
 add_action('wp_enqueue_scripts', 'meu_tema_enqueue_scripts');
 function meu_tema_enqueue_scripts() {
-	wp_enqueue_script('scripts', get_template_directory_uri()."/js/ajax.js", array('jquery'));
+	wp_enqueue_script('scripts', get_template_directory_uri()."/assets/js/scripts.min.js", array('jquery'));
 	wp_localize_script('scripts', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php'), 'outro_valor' => 1234));
 }
 
