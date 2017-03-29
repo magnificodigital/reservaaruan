@@ -48,3 +48,20 @@ function funcao_envia_email() {
 	wp_die();
 
 }
+
+
+function my_login_logo() { ?>
+	<style type="text/css">
+		body.login div#login h1 a {
+		    background-image: url('<?php bloginfo('template_url') ?>/img/logo.png');
+		    padding: 30px;
+		    width: inherit;
+		    height: inherit;
+		    line-height: inherit;
+		    background-size: 150px;
+		    background-position: center;
+		    background-color: rgba(35,94,162,1);
+		}
+   </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
