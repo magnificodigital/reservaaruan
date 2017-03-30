@@ -1,4 +1,4 @@
-</main>
+</div>
 
 <footer id="site">
 	<div class="container">
@@ -13,16 +13,20 @@
 </footer>
 
 <!--[if lt IE 9]>
+
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
 <![endif]-->
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 <script type="text/javascript">
 	$('[data-fancybox]').fancybox({
+
 		youtube : {
-			controls : 0,
+			controls : 1,
 			showinfo : 0
 		}
 	});
@@ -30,6 +34,7 @@
 <script>
 	document.addEventListener('DOMContentLoaded',function(){var JSLink=location.protocol+'//widget.omnize.com',JSElement=document.createElement('script');JSElement.async=!0;JSElement.charset='UTF-8';JSElement.src=JSLink;JSElement.onload=OnceLoaded;document.getElementsByTagName('body')[0].appendChild(JSElement);function OnceLoaded(){wOmz.init({id:3666});}},false);
 </script> 
+
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -39,8 +44,8 @@
 	ga('create', 'UA-88685938-1', 'auto');
 	ga('send', 'pageview');
 </script>
-<script type="text/javascript">
 
+<script type="text/javascript">
 	var slider = new Swiper('.galeria .swiper-container', {
 	    spaceBetween: 10,
 	    loop:false,
@@ -72,18 +77,27 @@
         pagination: '.swiper-pagination',
         paginationClickable: true,
 	});
-
 </script>
+
 <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/integration/stable/rd-js-integration.min.js"></script>  
+
 <script type="text/javascript">
+
     var meus_campos = {
         'nome': 'nome',
         'email': 'email',
         'tel': 'telefone'
      };
+
     options = { fieldMapping: meus_campos };
+
     RdIntegration.integrate('5bc74d9a15dc71ab1bd0bc162ae544d5', 'Reserva Aruan - Form Contato 1', options);  
+
 </script>
+
 <?php wp_footer() ?>
+
 </body>
+
 </html>
+

@@ -2,12 +2,14 @@
 
 add_action('wp_enqueue_scripts', 'meu_tema_enqueue_scripts');
 function meu_tema_enqueue_scripts() {
-	wp_enqueue_script('scripts', get_template_directory_uri()."/assets/js/scripts.min.js", array('jquery'));
+	wp_enqueue_script('scripts', get_template_directory_uri()."/dist/scripts.min.js", array('jquery'));
 	wp_localize_script('scripts', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php'), 'outro_valor' => 1234));
 }
 
+
 add_action('wp_ajax_envia_email', 'funcao_envia_email');
 add_action('wp_ajax_nopriv_envia_email', 'funcao_envia_email');
+
 function funcao_envia_email() {
 
 	// Modificar o email do remetente para outro email
@@ -15,7 +17,7 @@ function funcao_envia_email() {
 	function ewp_wp_mail_from() {
 	    return "contato@ekoconstrutora.com.br";
 	}
-	 
+
 	// Modificar o nome do remetente
 	add_filter( 'wp_mail_from_name', 'ewp_ep_mail_from_name' );
 	function ewp_ep_mail_from_name() {
@@ -28,7 +30,7 @@ function funcao_envia_email() {
 	if (!isset($array_dados['nome']) OR empty($array_dados['nome']) OR 
 		!isset($array_dados['email']) OR empty($array_dados['email']) OR !is_email($array_dados['email']) OR
 		!isset($array_dados['tel']) OR empty($array_dados['tel'])) {
-		
+
 		echo json_encode(array('class' => 'erro', 'mensagem' => 'Digite todos os campos'));
 
 	} else {
@@ -44,9 +46,7 @@ function funcao_envia_email() {
 
 	}
 
-
 	wp_die();
-
 }
 
 
@@ -64,4 +64,5 @@ function my_login_logo() { ?>
 		}
    </style>
 <?php }
+
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
