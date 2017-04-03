@@ -1,0 +1,17 @@
+{
+  "name": "reservaaruan",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Caio <caio@magnificodigital.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

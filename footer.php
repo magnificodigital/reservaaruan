@@ -12,19 +12,15 @@
 	</div>
 </footer>
 
+<?php wp_footer() ?>
 <!--[if lt IE 9]>
-
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
 <![endif]-->
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 <script type="text/javascript">
 	$('[data-fancybox]').fancybox({
-
 		youtube : {
 			controls : 1,
 			showinfo : 0
@@ -79,9 +75,8 @@
 	});
 </script>
 
-<script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/integration/stable/rd-js-integration.min.js"></script>  
-
-<script type="text/javascript">
+<script async type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/integration/stable/rd-js-integration.min.js"></script>  
+<script async type="text/javascript">
 
     var meus_campos = {
         'nome': 'nome',
@@ -90,12 +85,10 @@
      };
 
     options = { fieldMapping: meus_campos };
-
     RdIntegration.integrate('5bc74d9a15dc71ab1bd0bc162ae544d5', 'Reserva Aruan - Form Contato 1', options);  
 
 </script>
 
-<?php wp_footer() ?>
 
 </body>
 
