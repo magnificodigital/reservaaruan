@@ -204,7 +204,7 @@ header#site {
 	.container {
 		@include vcentra();
 	}
-	/*.row {width: 100%;}*/
+	.row {width: 100%;}
 }
 
 .content-info {

@@ -47,6 +47,8 @@
 
 				</div>
 
+				<div class="clearfix"></div>
+
 				<div class="col-lg-8 col-md-12 col-sm-12">
 
 					<div id="photos-galery" class="galeria">
@@ -91,6 +93,29 @@
 
 								</div>
 
+								<!---->
+
+								<div class="swiper-slide">
+
+									<a href="<?php bloginfo('template_url') ?>/img/galeria/RESERVA_ARUANA_CLOSE.jpg" data-fancybox="gallery1" class="galery">
+
+										<img src="<?php bloginfo('template_url') ?>/img/galeria/thumb-RESERVA_ARUANA_CLOSE.jpg" alt="slide">
+
+									</a>
+
+								</div>
+
+
+								<div class="swiper-slide">
+
+									<a href="<?php bloginfo('template_url') ?>/img/galeria/RESERVA_ARUANA_GERAL.jpg" data-fancybox="gallery1" class="galery">
+
+										<img src="<?php bloginfo('template_url') ?>/img/galeria/thumb-RESERVA_ARUANA_GERAL.jpg" alt="slide">
+
+									</a>
+
+								</div>
+
 		
 
 							
@@ -123,9 +148,6 @@
 
 	</section>
 
-
-
-	<!--slider-->
 
 	<section id="slider-home">
 

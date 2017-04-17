@@ -169,13 +169,14 @@ header#site {
   background: #FFF;
   height: 100%;
   display: flex;
-  position: relative;
-  /*.row {width: 100%;}*/ }
+  position: relative; }
   #row2 .container {
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
     align-items: center; }
+  #row2 .row {
+    width: 100%; }
 
 .content-info p {
   font-size: 24px;
